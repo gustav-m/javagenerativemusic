@@ -3,7 +3,7 @@
 
 public class SinWave {
     // sample rate
-    private static final int SAMPLE_RATE = 16 * 1024;
+    private static final int SAMPLE_RATE = 32 * 1024;
     
     private byte[] note;
     private int noteLength;

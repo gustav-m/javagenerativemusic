@@ -4,18 +4,23 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 
 public class NoteTest{
-    private static final int SAMPLE_RATE = 16 * 1024;
+    private static final int SAMPLE_RATE = 32 * 1024;
     
     public static void main(String[] args) throws InterruptedException {
-	    byte[] aNote = ( new SinWave(800, 440, 70f)).note();
-	    play (aNote);	    
-	    byte[] tremolo = (new Envelope(aNote).tremolo());
-	    play (tremolo);
+	    byte[] aNote = ( new SinWave(2000, 400, 70f)).note();
+	    //	    play (aNote);	    
+
 
 	    byte[] fadeOutNote = new Envelope(aNote).fadeOut();
-	    play (fadeOutNote);
 	    byte[] fadeInNote = (new Envelope(aNote).fadeIn());
-	    play (fadeInNote);
+	    byte[] tremolo = (new Envelope(aNote).tremolo());
+	    
+	    	    // filter
+	    Filter filter = new Filter();
+	    byte[] filteredNote = filter.filterSignal(fadeOutNote, SAMPLE_RATE, 200, 5, 0, 20);
+	    play(fadeOutNote);
+	    play(filteredNote);	    
+		
     }
 
     private static void play(byte[] note){
