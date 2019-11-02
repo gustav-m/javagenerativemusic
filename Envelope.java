@@ -31,11 +31,11 @@ public class Envelope{
 	return envelopedNote;	
     }
 
-    public byte[] tremolo(){
+    public byte[] tremolo(double speed){
 	for(int i=0; i < noteLength; i++){
-	    double angle = 1.5 * Math.PI * i / noteLength * 5;
+	    double angle = 2 * Math.PI * i / SAMPLE_RATE / 10  * speed;
 	    double multiplier = Math.sin(angle);
-	    envelopedNote[i] = (byte)( ((double)givenNote[i]) * multiplier );
+	    envelopedNote[i] = (byte)( (double)givenNote[i] - ( (double)givenNote[i]) * (multiplier + 1) );
 	}
 	return envelopedNote;		
     }

@@ -7,18 +7,19 @@ public class NoteTest{
     private static final int SAMPLE_RATE = 32 * 1024;
     
     public static void main(String[] args) throws InterruptedException {
-	    byte[] aNote = ( new SinWave(2000, 400, 70f)).note();
+	    byte[] aNote = ( new SinWave(4000, 400, 100f)).note();
 	    //	    play (aNote);	    
 
 
 	    byte[] fadeOutNote = new Envelope(aNote).fadeOut();
 	    byte[] fadeInNote = (new Envelope(aNote).fadeIn());
-	    byte[] tremolo = (new Envelope(aNote).tremolo());
+	    byte[] tremolo = (new Envelope(aNote).tremolo(25));
 	    
 	    	    // filter
-	    Filter filter = new Filter();
-	    byte[] filteredNote = filter.filterSignal(fadeOutNote, SAMPLE_RATE, 200, 5, 0, 20);
-	    play(fadeOutNote);
+	    Filter filter = new Filter(fadeInNote, 270, 400);
+	    byte[] filteredNote = filter.cutOffSinCurve(30);
+	    // play(tremolo);
+	    play(aNote);
 	    play(filteredNote);	    
 		
     }
