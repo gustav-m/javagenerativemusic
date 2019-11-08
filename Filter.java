@@ -22,7 +22,6 @@ public class Filter {
 	    double alpha = alpha(cutoffFreq);
 	    filteredNote[i] = (byte) ((double)filteredNote[i - 1] + (alpha * ( (double)originalNote[i] - (double)filteredNote[i - 1])));
 	}
-	System.out.println(cutoffFreq);
 	return filteredNote;
     }
 

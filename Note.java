@@ -16,8 +16,8 @@ public class Note {
     }
 
     private void setEqualTemerament(){
-	equalTemperament = new double[60];
-	for(int i = -24; i < 36; i++){
+	equalTemperament = new double[100];
+	for(int i = -24; i < 52; i++){
 	    equalTemperament[i + 24] = 440.00 * Math.pow(2.00, ( (double)i) / 12.00);
 	}
     }

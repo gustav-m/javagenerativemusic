@@ -66,9 +66,31 @@ public class InstrumentPart implements Runnable{
 	byte[] processedWave = new byte[wave.length];
 
 	// randomely alter the tone
+	// filter
+	int randFilterSwitch = (int)(Math.random() * 5);
+	Filter fil = new Filter(wave, frequency * 0.9 , frequency);
+	
+	switch(randFilterSwitch){
+	case 1:
+	    //if(!threadName.equals("JAVA")){
+	    processedWave = fil.increaseFreq();
+		//}
+	    break;
+		
+	case 2:
+	    //	    if(!threadName.equals("JAVA")){	    
+		processedWave = fil.cutOffSinCurve( (double)(Math.random() * 20) + 40);
+		//	    }
+	    break;
+	default:
+	    for(int i=0; i < wave.length; i++){
+		processedWave[i] = wave[i];
+	    }	    
+	}
+
 	// envelope
 	int randEnvelopeSwitch = (int)(Math.random() * 5);
-	Envelope en = new Envelope(wave);	
+	Envelope en = new Envelope(processedWave);	
 	switch(randEnvelopeSwitch){
 	case 1:
 	    processedWave = en.fadeIn();
@@ -80,27 +102,8 @@ public class InstrumentPart implements Runnable{
 	    processedWave = en.tremolo( (double)(Math.random() * 50));
 	    break;
 	default:
-	    for(int i=0; i < wave.length; i++){
-		processedWave[i] = wave[i];
-	    }
 	    
 	}
-	// filter
-	int randFilterSwitch = (int)(Math.random() * 5);
-	Filter fil = new Filter(processedWave, frequency * 0.7, frequency);
-	
-	switch(randFilterSwitch){
-	case 1:
-	    if(!threadName.equals("JAVA")){
-		processedWave = fil.cutOffSinCurve( (double)(Math.random() * 20) + 20);
-	    }
-		
-	case 2:
-	    if(!threadName.equals("JAVA")){	    
-		processedWave = fil.cutOffSinCurve( (double)(Math.random() * 20) + 40);
-	    }
-	}
-
 	
 	return processedWave;
     }

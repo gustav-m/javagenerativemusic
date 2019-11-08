@@ -8,8 +8,8 @@ public class ThreeBillion {
     public static final int[] DOWNLOAD = { 7, 8, 10, 13, 12, 12, 14, 7, 10, 8};
     public static final int[] DOWNLOAD2 = { 7, 8, 10, 13, 12, 12, 14, 7, 10, 8};
     public static final int[] DOWNLOAD3 = { 7, 8, 10, 13, 12, 12, 14, 7, 10, 8};    
-    public static final int[] DEVICE = { 14, 16, 18, 27, 26, 26, 27, 14, 17, 15};
-    public static final int[] DEVICE2 = { 14, 16, 18, 27, 26, 26, 27, 14, 17, 15};
+    public static final int[] DEVICE = { 15, 17, 18, 1, 21, 22, 23};
+    public static final int[] DEVICE2 = { 14, 16, 17, 18, 20, 21, 22};
     public static final String[] TonalCenters = { "A", "D", "C", "F", "Bb", "Eb", "Ab", "D", "A", "E", "Ab" };
 
 
@@ -17,8 +17,8 @@ public class ThreeBillion {
     
 
     public static void main(String[] args) throws InterruptedException {
-	    
-	InstrumentPart s1 = new InstrumentPart("JAVA", ORACLE, TonalCenters , 300, 26f);
+
+	InstrumentPart s1 = new InstrumentPart("JAVA", ORACLE, TonalCenters , 300, 32f);
 	s1.start();
 	InstrumentPart s2 = new InstrumentPart("YOU", JAVA, TonalCenters , 124, 16f);
 	s2.start();
@@ -26,16 +26,18 @@ public class ThreeBillion {
 	s3.start();
 	InstrumentPart s4 = new InstrumentPart("ORACLE", DOWNLOAD, TonalCenters, 1500, 19f);
 	s4.start();
-	InstrumentPart s5 = new InstrumentPart("DEVICE", DEVICE, TonalCenters, 140, 9f);
+
+	InstrumentPart s5 = new InstrumentPart("DEVICE", DEVICE, TonalCenters, 80, 10f);
 	s5.start();
-	InstrumentPart s6 = new InstrumentPart("DEVICE2", DEVICE2, TonalCenters, 140, 9f);
+	InstrumentPart s6 = new InstrumentPart("DEVICE2", DEVICE2, TonalCenters, 80, 10f);
 	s6.start();
+
 	InstrumentPart s7 = new InstrumentPart("DOWNLOAD2", DOWNLOAD2, TonalCenters, 200, 18F);
 	s7.start();
 	InstrumentPart s8 = new InstrumentPart("DOWNLOAD3", DOWNLOAD3, TonalCenters, 200, 18F);
 	s8.start();
 
-	
+
 	
 
 	while(true){
