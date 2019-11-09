@@ -17,23 +17,28 @@ public class Filter {
     public byte[] increaseFreq(){
 	double cutoffFreq = cutOffFreqMin;
 	filteredNote[0] = originalNote[0];
+	System.out.println(cutoffFreq);
         for(int i=1; i < originalNote.length - 1; i++){
 	    cutoffFreq = cutOffFreqMin + ( (cutOffFreqMax - cutOffFreqMin) / originalNote.length) * (i-1);
 	    double alpha = alpha(cutoffFreq);
 	    filteredNote[i] = (byte) ((double)filteredNote[i - 1] + (alpha * ( (double)originalNote[i] - (double)filteredNote[i - 1])));
 	}
+		System.out.println(cutoffFreq);
 	return filteredNote;
     }
 
     public byte[] cutOffSinCurve(double speed){
+	/*
 	double cutoffFreqAvg = (cutOffFreqMax + cutOffFreqMin) / 2;
 	double cutoffRange = cutOffFreqMax - cutOffFreqMin;
 	filteredNote[0] = originalNote[0];
-        for(int i=1; i < originalNote.length - 1; i++){
-	    double cutoffFreq = cutoffFreqAvg + ( (Math.sin( 2 * Math.PI * i / SAMPLE_RATE / 10 * speed) - 1 ) * cutoffRange);
+        for(int i=1; i < originalNote.length; i++){
+	    double cutoffFreq = Math.sin( 2 * Math.PI * i / SAMPLE_RATE / 10 * speed) * cutoffRange ;
 	    double alpha = alpha(cutoffFreq);
 	    filteredNote[i] = (byte) ((double)filteredNote[i - 1] + (alpha * ( (double)originalNote[i] - (double)filteredNote[i - 1])));
 	}
+	return filteredNote;
+	*/
 	return filteredNote;
     }
 

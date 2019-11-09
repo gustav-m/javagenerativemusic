@@ -62,13 +62,13 @@ public class InstrumentPart implements Runnable{
 
     private byte[] wave(double frequency, int ms){
 	SinWave sinWave = new SinWave(ms, frequency, volume);
-	byte[] wave = sinWave.note();
+	byte[] wave = sinWave.randomHarmonics((int)(Math.random() * 7));
 	byte[] processedWave = new byte[wave.length];
 
 	// randomely alter the tone
 	// filter
 	int randFilterSwitch = (int)(Math.random() * 5);
-	Filter fil = new Filter(wave, frequency * 0.9 , frequency);
+	Filter fil = new Filter(wave, frequency * 0.7 , frequency);
 	
 	switch(randFilterSwitch){
 	case 1:
@@ -79,7 +79,7 @@ public class InstrumentPart implements Runnable{
 		
 	case 2:
 	    //	    if(!threadName.equals("JAVA")){	    
-		processedWave = fil.cutOffSinCurve( (double)(Math.random() * 20) + 40);
+	    //processedWave = fil.cutOffSinCurve( (double)(Math.random() * 20) + 40);
 		//	    }
 	    break;
 	default:
