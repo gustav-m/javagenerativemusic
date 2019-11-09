@@ -18,23 +18,23 @@ public class ThreeBillion {
 
     public static void main(String[] args) throws InterruptedException {
 
-	InstrumentPart s1 = new InstrumentPart("JAVA", ORACLE, TonalCenters , 300, 18f);
+	InstrumentPart s1 = new InstrumentPart("JAVA", ORACLE, TonalCenters , 300, 36f);
 	s1.start();
-	InstrumentPart s2 = new InstrumentPart("YOU", JAVA, TonalCenters , 124, 8f);
+	InstrumentPart s2 = new InstrumentPart("YOU", JAVA, TonalCenters , 124, 17f);
 	s2.start();
-	InstrumentPart s3 = new InstrumentPart("DOWNLOAD", YOU, TonalCenters,  60, 9f);
+	InstrumentPart s3 = new InstrumentPart("DOWNLOAD", YOU, TonalCenters,  60, 18f);
 	s3.start();
-	InstrumentPart s4 = new InstrumentPart("ORACLE", DOWNLOAD, TonalCenters, 1500, 9f);
+	InstrumentPart s4 = new InstrumentPart("ORACLE", DOWNLOAD, TonalCenters, 1500, 20f);
 	s4.start();
 
-	InstrumentPart s5 = new InstrumentPart("DEVICE", DEVICE, TonalCenters, 80, 4f);
+	InstrumentPart s5 = new InstrumentPart("DEVICE", DEVICE, TonalCenters, 80, 9f);
 	s5.start();
-	InstrumentPart s6 = new InstrumentPart("DEVICE2", DEVICE2, TonalCenters, 80, 4f);
+	InstrumentPart s6 = new InstrumentPart("DEVICE2", DEVICE2, TonalCenters, 80, 8f);
 	s6.start();
 
-	InstrumentPart s7 = new InstrumentPart("DOWNLOAD2", DOWNLOAD2, TonalCenters, 200, 10F);
+	InstrumentPart s7 = new InstrumentPart("DOWNLOAD2", DOWNLOAD2, TonalCenters, 200, 23F);
 	s7.start();
-	InstrumentPart s8 = new InstrumentPart("DOWNLOAD3", DOWNLOAD3, TonalCenters, 200, 9F);
+	InstrumentPart s8 = new InstrumentPart("DOWNLOAD3", DOWNLOAD3, TonalCenters, 200, 20F);
 	s8.start();
 
 

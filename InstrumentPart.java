@@ -9,7 +9,7 @@ public class InstrumentPart implements Runnable{
 
     
     private static final double THREEBILLION = (10 ^ 9) * 3;
-    private static final int SAMPLE_RATE = 32 * 1024;
+    private static final int SAMPLE_RATE = 48 * 1024;
 
     private int[] noteNumbers;
     private double[] notes;

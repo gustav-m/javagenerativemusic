@@ -1,7 +1,7 @@
 // Filter
 
 public class Filter {
-    private static final int SAMPLE_RATE = 32 * 1024;    
+    private static final int SAMPLE_RATE = 48 * 1024;    
     private byte[] originalNote;
     private double cutOffFreqMin;
     private double cutOffFreqMax;

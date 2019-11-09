@@ -3,7 +3,7 @@
 
 public  abstract class Oscillator {
     // sample rate
-    private static final int SAMPLE_RATE = 32 * 1024;
+    private static final int SAMPLE_RATE = 48 * 1024;
 
     protected byte[] note;
     protected int noteLength;

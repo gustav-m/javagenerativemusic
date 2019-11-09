@@ -3,7 +3,7 @@
 // fade in, fade out, piano-like, tremolo
 
 public class Envelope{
-    private static final int SAMPLE_RATE = 32 * 1024;
+    private static final int SAMPLE_RATE = 48 * 1024;
     private byte[] givenNote;
     private int noteLength;
     private byte[] envelopedNote;
