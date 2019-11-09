@@ -27,17 +27,18 @@ public class ThreeBillion {
 	InstrumentPart s4 = new InstrumentPart("ORACLE", DOWNLOAD, TonalCenters, 1500, 20f);
 	s4.start();
 
-	InstrumentPart s5 = new InstrumentPart("DEVICE", DEVICE, TonalCenters, 80, 9f);
-	s5.start();
-	InstrumentPart s6 = new InstrumentPart("DEVICE2", DEVICE2, TonalCenters, 80, 8f);
-	s6.start();
 
 	InstrumentPart s7 = new InstrumentPart("DOWNLOAD2", DOWNLOAD2, TonalCenters, 200, 23F);
 	s7.start();
 	InstrumentPart s8 = new InstrumentPart("DOWNLOAD3", DOWNLOAD3, TonalCenters, 200, 20F);
 	s8.start();
 
-
+	InstrumentPart s5 = new InstrumentPart("DEVICE", DEVICE, TonalCenters, 80, 9f);
+	s5.start();
+	/*
+	InstrumentPart s6 = new InstrumentPart("DEVICE2", DEVICE2, TonalCenters, 80, 8f);
+	s6.start();
+	*/
 	
 
 	while(true){
