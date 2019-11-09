@@ -17,13 +17,11 @@ public class Filter {
     public byte[] increaseFreq(){
 	double cutoffFreq = cutOffFreqMin;
 	filteredNote[0] = originalNote[0];
-	System.out.println(cutoffFreq);
         for(int i=1; i < originalNote.length - 1; i++){
 	    cutoffFreq = cutOffFreqMin + ( (cutOffFreqMax - cutOffFreqMin) / originalNote.length) * (i-1);
 	    double alpha = alpha(cutoffFreq);
 	    filteredNote[i] = (byte) ((double)filteredNote[i - 1] + (alpha * ( (double)originalNote[i] - (double)filteredNote[i - 1])));
 	}
-		System.out.println(cutoffFreq);
 	return filteredNote;
     }
 

@@ -32,7 +32,7 @@ public class SinWave extends Oscillator{
     public byte[] randomHarmonics(int maxNumberOfOverTones){
 	SinWave harmonics = this;
 	for(int i = 0; i < maxNumberOfOverTones; i++){
-	    harmonics = harmonics.addUpNotes(new SinWave(noteLength, frequency * (i+2), volume - (float)(Math.random() * (volume * 0.8))));
+	    harmonics = harmonics.addUpNotes(new SinWave(noteLength, frequency * (i+2), volume - (float)(Math.random() * (volume * 0.9))));
 	}
 	return harmonics.note();
     }
