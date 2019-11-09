@@ -64,7 +64,7 @@ public class InstrumentPart implements Runnable{
 	SinWave sinWave = new SinWave(ms, frequency, volume);
 	byte[] wave;
 	int harmonicsRandomNess = (int)(Math.random() * 20);
-	if(harmonicsRandomNess > 6){
+	if(harmonicsRandomNess > 7){
 	    wave = sinWave.randomHarmonics((int)(Math.random() * 5));
 	}else{
 	    wave = sinWave.randomHarmonics((int)(Math.random() * 2));
@@ -95,16 +95,24 @@ public class InstrumentPart implements Runnable{
 	}
 
 	// envelope
-	int randEnvelopeSwitch = (int)(Math.random() * 5);
+	int randEnvelopeSwitch = (int)(Math.random() * 13);
 	Envelope en = new Envelope(processedWave);	
 	switch(randEnvelopeSwitch){
 	case 1:
+	case 2:
+	case 3:	    
 	    processedWave = en.fadeIn();
 	    break;
-	case 2:
+	case 4:
+	case 5:
+	case 6:
+	case 7:
+	case 8:
 	    processedWave = en.fadeOut();
 	    break;
-	case 3:	    
+	case 9:
+	case 10:
+	case 11:
 	    processedWave = en.tremolo( (double)(Math.random() * 50));
 	    break;
 	default:
